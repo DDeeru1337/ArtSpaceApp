@@ -6,8 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -115,11 +117,23 @@ fun ArtSpaceLayout() {
             PaintingWithBorders(
                 painter = painterResource(id = R.drawable.vincent_van_gogh)
             )
-            TextWithBorders(
-                text = "Self-Portrait, 1887",
-                fontFamily = FontFamily(Font(R.font.permanent_marker)),
-                backColor = Color.White
-            )
+            Row{
+                TextWithBorders(
+                    text = "Back",
+                    fontFamily = FontFamily(Font(R.font.permanent_marker)),
+                    backColor = Color.White)
+                TextWithBorders(
+                    text = "Self-Portrait, 1887",
+                    fontFamily = FontFamily(Font(R.font.permanent_marker)),
+                    backColor = Color.White,
+                    modifier = Modifier
+                        .padding(horizontal = 16.dp)
+                )
+                TextWithBorders(
+                    text = "Next",
+                    fontFamily = FontFamily(Font(R.font.permanent_marker)),
+                    backColor = Color.White)
+            }
             TextWithBorders(
                 text = "Van Gogh created more than 43 self-portraits between 1885 and 1889. " +
                         "They were usually completed in series, such as those painted in Paris in mid-1887, and continued until shortly before his death. " +
